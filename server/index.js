@@ -8,7 +8,10 @@ require("dotenv").config();
 const express = require("express")
 
 const app = express()
+const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded());
 
+app.use(bodyParser.json());
 
 
 const MODEL_NAME = "models/text-bison-001";
@@ -18,7 +21,7 @@ const client = new TextServiceClient({
   authClient: new GoogleAuth().fromAPIKey(API_KEY),
 });
 
-const promptString = `Tell me a joke`;
+let promptString = `Tell me a joke`;
 
 const answer = ""
 const stopSequences = [];
@@ -27,9 +30,9 @@ app.get("/", (req, res) => {
   res.send("Use :/api for prompt responses")
 })
 
-app.get("/api", (req, res) => {
-
-
+app.post("/api", (req, res) => {
+  console.log('Request receieved...!!')
+  promptString = req.body.prompt
 
   client.generateText({
     // required, which model to use to generate the result

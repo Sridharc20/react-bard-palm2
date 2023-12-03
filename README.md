@@ -24,6 +24,7 @@ Server /
     npm install @google-ai/generativelanguage
     npm install dotenv
     npm install express
+    npm install body-parser
 
     export API_KEY="xxxxxxxxxxxx"
 
