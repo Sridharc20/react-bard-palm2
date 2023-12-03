@@ -1,8 +1,6 @@
 # react-bard-palm2
 React app uses bard and palm2
 
-
-
 PALM2:
     Pathways Language Model - PALM2
     https://ai.google/discover/palm2/
@@ -25,5 +23,10 @@ Server /
     npm install google-auth-library
     npm install @google-ai/generativelanguage
     npm install dotenv
+    npm install express
 
     export API_KEY="xxxxxxxxxxxx"
+
+Client:
+        npm create vite@latest client
+        npm install @picocss/pico
