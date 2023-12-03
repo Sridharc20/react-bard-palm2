@@ -12,14 +12,15 @@ Requirement:
     https://developers.generativeai.google/products/makersuite
 
     curl \
--H 'Content-Type: application/json' \
--d '{ "prompt": { "text": "Write a story about a magic backpack"} }' \
-"https://generativelanguage.googleapis.com/v1beta3/models/text-bison-001:generateText?key=YOUR_API_KEY"
+    -H 'Content-Type: application/json' \
+    -d '{ "prompt": { "text": "Write a story about a magic backpack"} }' \
+    "https://generativelanguage.googleapis.com/v1beta3/models/text-bison-001:generateText?key=YOUR_API_KEY"
 
 
 
 To Setup:
 Server /
+
     npm install google-auth-library
     npm install @google-ai/generativelanguage
     npm install dotenv
@@ -29,5 +30,10 @@ Server /
     export API_KEY="xxxxxxxxxxxx"
 
 Client:
+
         npm create vite@latest client
         npm install @picocss/pico
+        npm install marked dompurify
+
+
+![](screensnap.png)
